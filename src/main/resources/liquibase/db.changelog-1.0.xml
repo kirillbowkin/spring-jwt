@@ -3,6 +3,10 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
+    <changeSet id="0.0.0" author="kirill.shishkin">
+        <sqlFile path="classpath:liquibase/uuid.sql"></sqlFile>
+    </changeSet>
+
     <changeSet id="1.0.0" author="kirill.shishkin">
         <createTable tableName="users">
             <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
@@ -95,13 +99,28 @@
                                  onUpdate="RESTRICT"/>
     </changeSet>
 
+
     <changeSet id="1.0.5" author="kirill.shishkin">
+        <sqlFile path="classpath:liquibase/uuid.sql"></sqlFile>
+    </changeSet>
+
+    <changeSet id="1.0.6" author="kirill.shishkin">
+        <sqlFile path="classpath:liquibase/users.sql"></sqlFile>
+    </changeSet>
+
+    <changeSet id="1.0.7" author="kirill.shishkin">
         <insert tableName="roles">
+            <column name="id" value="d508b26e-6cc8-47a5-be1d-5e611cc4c03f"></column>
             <column name="name" value="ROLE_USER"></column>
         </insert>
 
         <insert tableName="roles">
+            <column name="id" value="d920dcda-561a-40aa-9207-04328e40052b"></column>
             <column name="name" value="ROLE_ADMIN"></column>
         </insert>
+    </changeSet>
+
+    <changeSet id="1.0.8" author="kirill.shishkin">
+        <sqlFile path="classpath:liquibase/user_roles.sql"></sqlFile>
     </changeSet>
 </databaseChangeLog>
