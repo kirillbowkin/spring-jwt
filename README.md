@@ -283,7 +283,7 @@ POST|https://spring-jwt-application.herokuapp.com/api/v1/admin/users|add a new u
 PUT|https://spring-jwt-application.herokuapp.com/api/v1/admin/users|Update existing user
 DELETE|https://spring-jwt-application.herokuapp.com/api/v1/admin/users/{id}|Delete existing user by its id
 
-####Examples:
+#### Examples:
 
 ---
 #### ```GET https://spring-jwt-application.herokuapp.com/api/v1/users/```
@@ -337,7 +337,7 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 ---
 #### ```POST https://spring-jwt-application.herokuapp.com/api/v1/users/```
-####` Headers`
+#### `Headers`
 
 key|value
 ---|:---
