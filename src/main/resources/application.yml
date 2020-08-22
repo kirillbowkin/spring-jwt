@@ -14,8 +14,9 @@ spring:
   liquibase:
     change-log: classpath:liquibase/db.changelog-master.xml
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/jwtrest}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    user: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:31032000}
+    clear-checksums:
 
 
 jwt:
