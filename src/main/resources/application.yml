@@ -1,0 +1,24 @@
+server:
+  port: 9090
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwtrest
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 31032000
+
+  liquibase:
+    change-log: classpath:liquibase/db.changelog-master.xml
+    url: jdbc:postgresql://localhost:5432/jwtrest
+    user: postgres
+    password: 31032000
+
+
+jwt:
+  token:
+    secret: A&62m!kBJUuG*ey3zCNTj*QMpXeFzgjeR&=jByTLFacNBNUGxXAdMKxe_YPy63fd$4592hb8KnDW*Jj6-wr$JCbZGp=CyBEr!XQNG_!v7s8KDPtVJ2H-6R5WhTN?kgkZfVy!v8y=J5sUzVBLvRbx4Q&N%Z_9EHQ=-V^^7M7wN=zz-!Gdpq^MDvJ77M8&fmcN9P2BG?_*kk$Z?hZ?MFfZ3EJUWP8N2WcfPnv%y=R-EMRP$P*B=-tA%_6L#Zw#J^5gUVgu7==eanGp-bmX8fHnE@h?+V&R3=y-Dp6B5Ve4@Pzz4=xS=YMJD&Pc8V5nkBnQxAZ9aA^dp_*aW+fYCpg@QU@nXmXp4J8J3vZ#*aC-TwSpsYgt@uz!b5$C9=&*L3fLjS+RTuy!n3*zFeDUGPMSsFBb*%*$sdGg3qn_8N!GEbYShzDZxmJxG7V5QKkDEseA^QW@uUs*9a7c*DM!8638K5hctnZcM%@MEU!mGRUMyAQj3!L-frnPKdEaJYA&Dw8+-+Drs9u8U!Ew9mf@Y4^96A6Ds@2Xh+D*d?5U=!$N*V^vpj#T7DyUU5GeRx_vpHYm#fWwZu=T6++NWML6_Te7x+9XUZH7-aNJ6Q5NSUR@G++R9WXJ*Qs=%4C?asVcxny4C_=aZRh%zGZ6S_-TQN!*tzNtDxRYVtQt8XaDWb=uNQNvTSC*P-EJLx!waYtJ^nQXPLaQm8jU#NVg$=Smm$Jz^keL5=wGx*z=wnu6y8T%324fuQqjdrY*JCVqMTPb?_k&t?CPH5*sa$M*&2tCk-DQ+X9s!JP^YZR2BfUkx9TNXv^!7GeB$gedw^jxUEANq8Y7C9+4zk&_Q4LBgTq@htsSa9k6Zkt*D^8+*?J+ads@Eu^G9m^AKbjTTLL@ZSFuhcK%BGyh#9&2&wJr7_VQd6zY54nWUzgjX=9Mqxt4UFGA&j-=*9BW@!A8*-?M+pc5mgZVe$7vTTf-Ybxv2d!2xt?S?J!kfVLUkq7Wp2+&yLQtKB$=qKwqZ&2pysS=7?M-Q6p!+KXzvt2y9y9KB?_gGh$xXEGJNSGy-*Nze_pytS5WuSXyWp$stVT$4H!Gatp9+ZmBD7Sft*!Q+nmhwenCss^qDk=69$Wnh6!j%Q?qpGbF@AJ+zmS+N+t$5SU%Kf#JY+Vv4A&pKcq8&4%htAp7N-GGcYQTeha4RzNpadhHXJbPtqZ%jSz!JvC@uUH+tByn2@d$^DT9J*en+n-RYt4GYaSmLZ+?^_WwJWm4nC-VdJkab37r#+Ee$FxK9zTjS&k8dGZ=Nx7BF?PmTpE?$EdxE9b8&6J6*KTm6kR3ByZrxvdLB8GczgTC%JF!%PMquF?NF2qNCaE@UPpPdYa8mgTtdhn#wqv?Pjeutc8ZTz9C9Jk%R5Rm+Aet%re&Fre&aEf%qa&BGhgJsy3hk@e%my=+rZ@Z9+QR7BUp3Y%5es8tnJJ-KEGr-&H@jjUQ^mPhwXE_uuPus9rq$Rgucn2sF%+hJucze_%zqAAShgpSGH7u9968K4L?na--yubz5R=nAgk@6#MFDcSQNPJtvfybPq^7?jPUt2h*@t%ZWv+rpEZRSWxgdZfYSb2sx-BH9?MURFJMBLfxh!_EX^nc+E4yWGE8aqFktk@MCZjf^KE=-LvzNLne9+-=QUF9h2^g#vu_q8-r%6u_*^GF2A8Z=#AvF=fN6+k9p686ej4sCGTF-JQ^C!SFw9ZryGwrDHAFC3LJYf=+XB&!f4cLk2yTWR@TXyzVrNFVcft_GQs72^GV#&%cW4aCCyCUL+vb^sc9dKxUNUAA#_9D3^H5H?hnq8w-8yRrJ?Qe$gD*u_MsbbN_yaE@pPKpQEcyhshGM3@n$Z*XxW_CS49&r+n46-y8=Vqdn!7jm*?uB%YJk*C-5&E-?ZHdc3DCuYWVmaFEqZGbccS$XE_xNDKjXA+6J?2BMrdW3wvf6fu555-vH4#H5eaB#gAN9yb*%-9D*bz98!T2nwLZ3zqw_7T@KHd8CD-FPAMchU-Zsu@WtqMP*xJvpdny2GjA^NJGmWKM*j$X-LSmQv34N87k!Z%+
+    expired: 3600000

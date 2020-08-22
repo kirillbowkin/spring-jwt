@@ -1,0 +1,31 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    
+    <changeSet id="1.0.0" author="kirill.shishkin">
+        <createTable tableName="plants">
+            <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+
+            <column name="common_name" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="family" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="scientific_name" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.1" author="kirill.shishkin">
+        <sqlFile path="classpath:liquibase/plants.sql"></sqlFile>
+    </changeSet>
+
+
+</databaseChangeLog>

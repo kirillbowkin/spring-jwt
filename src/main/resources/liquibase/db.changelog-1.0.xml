@@ -1,0 +1,107 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0" author="kirill.shishkin">
+        <createTable tableName="users">
+            <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+
+            <column name="username" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true"></constraints>
+            </column>
+
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="first_name" type="VARCHAR(100)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="last_name" type="VARCHAR(100)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="status" type="VARCHAR(25)" defaultValue="ACTIVE">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="created" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="updated" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.1" author="kirill.shishkin">
+        <createTable tableName="roles">
+            <column name="id" type="UUID" defaultValue="uuid_generate_v4()">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true"></constraints>
+            </column>
+
+            <column name="status" type="VARCHAR(25)" defaultValue="ACTIVE">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="created" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"></constraints>
+            </column>
+
+            <column name="updated" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.2" author="kirill.shishkin">
+        <createTable tableName="user_roles">
+            <column name="user_id" type="UUID"></column>
+
+            <column name="role_id" type="UUID"></column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="1.0.3" author="kirill.shishkin">
+        <addForeignKeyConstraint baseTableName="user_roles"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk_user_roles_user"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="1.0.4" author="kirill.shishkin">
+        <addForeignKeyConstraint baseTableName="user_roles"
+                                 baseColumnNames="role_id"
+                                 constraintName="fk_user_roles_role"
+                                 referencedTableName="roles"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="1.0.5" author="kirill.shishkin">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_USER"></column>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
