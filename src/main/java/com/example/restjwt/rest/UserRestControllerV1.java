@@ -5,6 +5,7 @@ import com.example.restjwt.model.Plant;
 import com.example.restjwt.model.User;
 import com.example.restjwt.service.PlantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class UserRestControllerV1 {
 
     @Autowired
+    @Lazy
     PlantService plantService;
 
     @GetMapping()

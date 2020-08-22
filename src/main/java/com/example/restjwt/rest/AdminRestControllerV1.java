@@ -6,6 +6,7 @@ import com.example.restjwt.model.User;
 import com.example.restjwt.service.PlantService;
 import com.example.restjwt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class AdminRestControllerV1 {
     private final PlantService plantService;
 
     @Autowired
-    public AdminRestControllerV1(UserService userService, PlantService plantService) {
+    public AdminRestControllerV1(@Lazy UserService userService, @Lazy PlantService plantService) {
         this.userService = userService;
         this.plantService = plantService;
     }
