@@ -6,16 +6,16 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwtrest
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/jwtrest}
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: 31032000
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:31032000}
 
   liquibase:
     change-log: classpath:liquibase/db.changelog-master.xml
-    url: jdbc:postgresql://localhost:5432/jwtrest
-    user: postgres
-    password: 31032000
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/jwtrest}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:31032000}
 
 
 jwt:
