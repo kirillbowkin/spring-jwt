@@ -72,6 +72,11 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>2.3.3.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-maven-plugin</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -79,6 +84,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <changeLogFile>src/main/resources/liquibase/db.changelog-master.yaml</changeLogFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
