@@ -48,10 +48,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .apply(new JwtConfigurer(jwtTokenProvider));
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring()
-                .antMatchers("/resources/**"); // #3
-    }
+
 }
