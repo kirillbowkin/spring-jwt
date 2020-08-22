@@ -48,7 +48,7 @@ If credentials are valid response will be the following:
 In case credentials are not valid you'll get `400 BAD_REQUEST` in response.
 
 ---
-####Users
+#### Users
 username | password | roles
 --- | --- | :---
 kirill|kirill|ADMIN, USER
@@ -59,30 +59,30 @@ userone|userone|USER
 >ADMIN role gives access to plants endpoint, and allows CRUD operations there, it also gives authority to manipulate users at a related endpoint.
 
 ---
-##Requests
+## Requests
 
 Once you've authenticated now you are able to make authorized requests with your jwt token, so you'd better not to lose it, for if you'll try to make any request without providing a token, you'll get `403 Forbidden` in response.
 
 In header value you must provide following sequence: `Bearer_` + `your_token`,
 for instance if your token was `ABCDE`
 the final value that you must specify in the key of a header is `Bearer_ABCDE`
-####USER requests:
+#### USER requests:
 
 method | url|description
 ---|:---:|:---:
 GET|https://spring-jwt-application.herokuapp.com/api/v1/plants|fetches all plants
 GET|https://spring-jwt-application.herokuapp.com/api/v1/plants/{id}|fetches a specific plant by id
 
-####Examples:
+#### Examples:
 
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/plants```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/plants```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Response`
+#### `Response`
 ```json
 [   
     {
@@ -102,22 +102,19 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
          "commonName": "Woody Rockcress",
          "family": "Brassicaceae",
          "scientificName": "Arabis suffrutescens S. Watson"
-     },
-    
-     ...
-
+     }
 ]
   
 
 ```
 ---
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
-####`Response`
+#### `Response`
 ```json
 {
         "id": "bd464194-37aa-4319-95d6-aba5ef933ffa",
@@ -128,7 +125,7 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 
 ---
-####ADMIN requests:
+#### ADMIN requests:
 + **Plants requests**
 
 method | url|description
@@ -139,17 +136,17 @@ POST|https://spring-jwt-application.herokuapp.com/api/v1/plants|add a new plant
 PUT|https://spring-jwt-application.herokuapp.com/api/v1/plants|Update existing plant
 DELETE|https://spring-jwt-application.herokuapp.com/api/v1/plants/{id}|Delete existing plant by its id
 
-####Examples:
+#### Examples:
 
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 [   
@@ -172,21 +169,21 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
          "scientificName": "Arabis suffrutescens S. Watson"
      },
     
-     ...
+     
 
 ]
   
 
 ```
 ---
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -197,14 +194,14 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 ---
-####```POST https://spring-jwt-application.herokuapp.com/api/v1/plants/```
-####`Headers`
+#### ```POST https://spring-jwt-application.herokuapp.com/api/v1/plants/```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Body`
+#### `Body`
 ```json
 {
     "commonName" : "new common name",
@@ -213,8 +210,8 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -226,14 +223,14 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 
 ---
-####```PUT https://spring-jwt-application.herokuapp.com/api/v1/plants/```
-####`Headers`
+#### ```PUT https://spring-jwt-application.herokuapp.com/api/v1/plants/```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Body`
+#### `Body`
 ```json
 {
     "id" : "bd464194-37aa-4319-95d6-aba5ef933ffa",
@@ -243,8 +240,8 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -256,16 +253,16 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 ---
 
-####```DELETE https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
-####`Headers`
+#### ```DELETE https://spring-jwt-application.herokuapp.com/api/v1/plants/bd464194-37aa-4319-95d6-aba5ef933ffa```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 ```json
 {
     "id": "bd464194-37aa-4319-95d6-aba5ef933ffa",
@@ -289,15 +286,15 @@ DELETE|https://spring-jwt-application.herokuapp.com/api/v1/admin/users/{id}|Dele
 ####Examples:
 
 ---
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/users/```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/users/```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 [
@@ -320,14 +317,14 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 
 ```
 ---
-####```GET https://spring-jwt-application.herokuapp.com/api/v1/users/6d3ddc48-3b95-474a-9595-55319b9ff85d```
-####`Headers`
+#### ```GET https://spring-jwt-application.herokuapp.com/api/v1/users/6d3ddc48-3b95-474a-9595-55319b9ff85d```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -339,14 +336,14 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 ---
-####```POST https://spring-jwt-application.herokuapp.com/api/v1/users/```
-####`Headers`
+#### ```POST https://spring-jwt-application.herokuapp.com/api/v1/users/```
+####` Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Body`
+#### `Body`
 ```json
 {
         "username": "newuser",
@@ -356,8 +353,8 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -370,14 +367,14 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 
 ---
-####```PUT https://spring-jwt-application.herokuapp.com/api/v1/users/```
-####`Headers`
+#### ```PUT https://spring-jwt-application.herokuapp.com/api/v1/users/```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
-####`Body`
+#### `Body`
 ```json
 {
     "username": "newuser",
@@ -387,8 +384,8 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 }
 ```
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 
 ```json
 {
@@ -401,16 +398,16 @@ Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0
 ```
 ---
 
-####```DELETE https://spring-jwt-application.herokuapp.com/api/v1/users/bd464194-37aa-4319-95d6-aba5ef933ffa```
-####`Headers`
+#### ```DELETE https://spring-jwt-application.herokuapp.com/api/v1/users/bd464194-37aa-4319-95d6-aba5ef933ffa```
+#### `Headers`
 
 key|value
 ---|:---
 Authorization|Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraXJpbGwiLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTU5ODEzNDI5NCwiZXhwIjoxNTk4MTM3ODk0fQ.BFZVaflw8H3FrN7VUckBGiIm_iODMSdQX41SAEPWdCE
 
 
-####`Response`
-####`Status: 200 OK`
+#### `Response`
+#### `Status: 200 OK`
 ```json
 {
     "id": "bd464194-37aa-4319-95d6-aba5ef933ffa",
